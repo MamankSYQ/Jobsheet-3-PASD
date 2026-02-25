@@ -6,6 +6,7 @@ public class DosenDemo01 {
         String kode, nama;
         boolean jenisKelamin;
         Dosen01[] arrayOfDosen = new Dosen01[3];
+        DataDosen01 data = new DataDosen01(); 
 
         for(int i = 0; i < arrayOfDosen.length; i++){
             System.out.println("Masukkan Data Dosen ke-" + (i + 1));
@@ -22,15 +23,10 @@ public class DosenDemo01 {
             System.out.println("-------------------------------");
             arrayOfDosen[i] = new Dosen01(kode, nama, jenisKelamin, usia);  
         }
-
-        int no = 1;
-        for (Dosen01 ds : arrayOfDosen){
-            System.out.println("Data Dosen ke-" + no);
-            System.out.println("Kode                : "+ds.kode);
-            System.out.println("Nama                : "+ds.nama);
-            System.out.println("Jenis Kelamin       : "+(ds.jenisKelamin ? "Pria" : "Wanita"));
-            System.out.println("Usia                : "+ds.usia);
-            System.out.println("-------------------------------");
-        }
+        data.dataSemuaDosen(arrayOfDosen);
+        data.jumlahDosenPerJenisKelamin(arrayOfDosen);
+        data.rerataUsiaDosenPerJenisKelamin(arrayOfDosen);
+        data.dataDosenPalingTua(arrayOfDosen);
+        data.dataDosenPalingMuda(arrayOfDosen);
     }
 }
